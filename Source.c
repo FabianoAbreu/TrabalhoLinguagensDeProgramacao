@@ -365,16 +365,9 @@ int main()
 										alunosCadastrados(&listaAluno);
 										alunosDaTurma(trm);
 										printf("-------------------------- INSERIR ALUNO NA TURMA --------------------------\n");
-										printf("\tINFORME A MATRICULA DO ALUNO OU INSIRA O ");
-										printf("\tVALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
+										printf("\tINFORME A MATRICULA DO ALUNO: ");
 										scanf("%d", &matricula);
 										printf("\n");
-
-										if (matricula == 0) {
-											system("cls");
-											break;
-										}
-
 										aln = buscarAluno(&trm->alunosDaTurma, matricula);
 										if (aln == NULL) 
 										{
@@ -400,16 +393,9 @@ int main()
 										{
 											professoresCadastrados(&listaProfessor);
 											printf("------------------------ INSERIR PROFESSOR NA TURMA -----------------------\n");
-											printf("\tINFORME O CÓDIGO DO PROFESSOR OU INSIRA O");
-											printf("\tVALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
+											printf("\tINFORME O CÓDIGO DO PROFESSOR: ");
 											scanf("%d", &codigo);
 											printf("\n");
-
-											if (codigo == 0) {
-												system("cls");
-												break;
-											}
-
 											resultado = inserirProfessorNaTurma(&listaProfessor, trm, codigo);
 											if (resultado) 
 											{
@@ -435,16 +421,9 @@ int main()
 										{
 											disciplinasCadastradas(&listaDisciplina);
 											printf("----------------------- INSERIR DISCIPLINA NA TURMA -----------------------\n");
-											printf("\tINFORME O CÓDIGO DA DISCIPLINA OU INSIRA ");
-											printf("\t0 VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
+											printf("\tINFORME O CÓDIGO DA DISCIPLINA: ");
 											scanf("%d", &codigo);
 											printf("\n");
-
-											if (codigo == 0) {
-												system("cls");
-												break;
-											}
-
 											resultado = inserirDisciplinaNaTurma(&listaDisciplina, trm, codigo);
 											if (resultado)
 											{
@@ -506,16 +485,9 @@ int main()
 						case 1:
 							alunosCadastrados(&listaAluno);
 							printf("-------------------------------- EDITAR ALUNO -------------------------------\n");
-							printf("\tINFORME A MATRICULA DO ALUNO PARA PODER EDITAR SEU NOME\n");
-							printf("\tOU INSIRA O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-							//printf("\tMATRICULA: ");
+							printf("\tINFORME A MATRICULA DO ALUNO PARA PODER EDITAR SEU NOME...\n");
+							printf("\tMATRICULA: ");
 							scanf("%d", &matricula);
-
-							if (matricula == 0) {
-								system("cls");
-								break;
-							}
-
 							getchar();
 							aln = editarAluno(&listaAluno, matricula);
 							// atualizar o nome do aluno nas turma que ele esta cadastrado
@@ -528,16 +500,9 @@ int main()
 						case 2:
 							professoresCadastrados(&listaProfessor);
 							printf("----------------------------- EDITAR PROFESSOR ------------------------------\n");
-							printf("\tINFORME O CÓDIGO DO PROFESSOR PARA PODER EDITAR SEU NOME\n");
-							printf("\tOU INSIRA O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-							//printf("\tCÓDIGO: ");
+							printf("\tINFORME O CÓDIGO DO PROFESSOR PARA PODER EDITAR SEU NOME...\n");
+							printf("\tCÓDIGO: ");
 							scanf("%d", &codigo);
-
-							if (codigo == 0) {
-								system("cls");
-								break;
-							}
-
 							getchar();
 							editarProfessor(&listaProfessor, codigo);
 							system("pause");
@@ -545,16 +510,9 @@ int main()
 						case 3:
 							disciplinasCadastradas(&listaDisciplina);
 							printf("---------------------------- EDITAR DISCIPLINA ------------------------------\n");
-							printf("\tINFORME O CÓDIGO DA DISCIPLINA PARA PODER EDITAR SEU NOME\n");
-							printf("\tOU INSIRA O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-							//printf("\tCÓDIGO: ");
+							printf("\tINFORME O CÓDIGO DA DISCIPLINA PARA PODER EDITAR SEU NOME...\n");
+							printf("\tCÓDIGO: ");
 							scanf("%d", &codigo);
-
-							if (codigo == 0) {
-								system("cls");
-								break;
-							}
-
 							getchar();
 							editarDisciplina(&listaDisciplina, codigo);
 							system("pause");
@@ -562,16 +520,9 @@ int main()
 						case 4:
 							turmasCadastradas(&listaTurma);
 							printf("------------------------------- EDITAR TURMA --------------------------------\n");
-							printf("\tINFORME O CÓDIGO DA TURMA QUE DESEJA EDITAR OU\n");
-							printf("\tO VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-							//printf("\tCÓDIGO: ");
+							printf("\tINFORME O CÓDIGO DA TURMA QUE DESEJA EDITAR...\n");
+							printf("\tCÓDIGO: ");
 							scanf("%d", &codigo);
-
-							if (codigo == 0) {
-								system("cls");
-								break;
-							}
-
 							trm = buscarTurma(&listaTurma, codigo);
 							if (trm != NULL)
 							{
@@ -600,12 +551,10 @@ int main()
 											printf("\tO VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
 											scanf("%d", &matricula);
 											printf("\n");
-
 											if (matricula == 0) {
 												system("cls");
 												break;
 											}
-
 											aln = buscarAluno(&trm->alunosDaTurma, matricula);
 											if (aln == NULL)
 											{
@@ -633,12 +582,10 @@ int main()
 											printf("\tO VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
 											scanf("%d", &codigo);
 											printf("\n");
-
 											if (codigo == 0) {
 												system("cls");
 												break;
 											}
-
 											resultado = inserirProfessorNaTurma(&listaProfessor, trm, codigo);
 											if (resultado)
 											{
@@ -658,12 +605,10 @@ int main()
 											printf("\tO VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
 											scanf("%d", &codigo);
 											printf("\n");
-
 											if (codigo == 0) {
 												system("cls");
 												break;
 											}
-
 											resultado = inserirDisciplinaNaTurma(&listaDisciplina, trm, codigo);
 											if (resultado)
 											{
@@ -775,16 +720,9 @@ int main()
 							{
 								alunosCadastrados(&listaAluno);
 								printf("-------------------------------- EXCLUIR ALUNO ------------------------------\n");
-								printf("\tINFORME A MATRICULA DO ALUNO PARA PODER EXCLUI-LO\n");
-								printf("\tOU O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-								//printf("\tMATRICULA: ");
+								printf("\tINFORME A MATRICULA DO ALUNO PARA PODER EXCLUI-LO...\n");
+								printf("\tMATRICULA: ");
 								scanf("%d", &matricula);
-
-								if (matricula == 0) {
-									system("cls");
-									break;
-								}
-
 								resultado = excluirAluno(&listaAluno, matricula);
 								printf("\n");
 								if (resultado)
@@ -809,16 +747,9 @@ int main()
 							{
 								professoresCadastrados(&listaProfessor);
 								printf("----------------------------- EXCLUIR PROFESSOR ------------------------------\n");
-								printf("\tINFORME O CÓDIGO DO PROFESSOR PARA PODER EXCLUI-LO\n");
-								printf("\tOU O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-								//printf("\tCÓDIGO: ");
+								printf("\tINFORME O CÓDIGO DO PROFESSOR PARA PODER EXCLUI-LO...\n");
+								printf("\tCÓDIGO: ");
 								scanf("%d", &codigo);
-
-								if (codigo == 0) {
-									system("cls");
-									break;
-								}
-
 								resultado = excluirProfessor(&listaProfessor, codigo);
 								printf("\n");
 								if (resultado)
@@ -843,16 +774,9 @@ int main()
 							{
 								disciplinasCadastradas(&listaDisciplina);
 								printf("---------------------------- EXCLUIR DISCIPLINA ------------------------------\n");
-								printf("\tINFORME O CÓDIGO DA DISCIPLINA PARA PODER EXCLUI-LA\n");
-								printf("\tOU O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-								//printf("\tCÓDIGO: ");
+								printf("\tINFORME O CÓDIGO DA DISCIPLINA PARA PODER EXCLUI-LA...\n");
+								printf("\tCÓDIGO: ");
 								scanf("%d", &codigo);
-
-								if (codigo == 0) {
-									system("cls");
-									break;
-								}
-
 								resultado = excluirDisciplina(&listaDisciplina, codigo);
 								printf("\n");
 								if (resultado)
@@ -871,15 +795,8 @@ int main()
 							turmasCadastradas(&listaTurma);
 							printf("------------------------------ EXCLUIR TURMA -------------------------------\n");
 							printf("\tINFORME O CÓDIGO DA TURMA E ESCOLHA AS OPCÕES A SEGUIR...\n");
-							printf("\tOU O VALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-							//printf("\tCÓDIGO: ");
+							printf("\tCÓDIGO: ");
 							scanf("%d", &codigo);
-
-							if (codigo == 0) {
-								system("cls");
-								break;
-							}
-
 							trm = buscarTurma(&listaTurma, codigo);
 							if (trm != NULL)
 							{
@@ -906,17 +823,10 @@ int main()
 											{
 												alunosDaTurma(trm);
 												printf("-------------------------- EXCLUIR ALUNO DA TURMA --------------------------\n");
-												printf("\tINFORME A MATRÍCULA DO ALUNO OU INSIRA O\n");
-												printf("\tVALOR '0' PARA VOLTAR AO MENU ANTERIOR: ");
-												//printf("\tMATRÍCULA: ");
+												printf("\tINFORME A MATRÍCULA DO ALUNO...\n");
+												printf("\tMATRÍCULA: ");
 												scanf("%d", &matricula);
 												printf("\n");
-
-												if (matricula == 0) {
-													system("cls");
-													break;
-												}
-
 												resultado = excluirAlunoNaTurma(trm, matricula);
 												if (resultado)
 												{
